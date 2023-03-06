@@ -11,7 +11,7 @@ router.get("/", async (req, res) =>{
      const totalGames = await getAllVideogames();
      if(name){
       const gamesFilter = totalGames.filter((e)=>{
-          e.name.toLowerCase().include(name.toLowerCase());   
+          e.name.toLowerCase().includes(name.toLowerCase());   
       });
      return res.status(200).json(gamesFilter); 
    }
